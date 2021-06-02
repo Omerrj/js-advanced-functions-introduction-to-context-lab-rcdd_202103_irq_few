@@ -57,8 +57,8 @@ const allWagesFor = (employee)=>{
     const eligibleDates = employee.timeInEvents.map((e)=>e.date)
 
     const payable = eligibleDates.reduce((memo, d)=>
-        return memo + wagesEarnedOnDate(employee, d)
-    }, 0)
+        memo + wagesEarnedOnDate(employee, d)
+    }, 0) 
 
     return payable
 }
