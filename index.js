@@ -57,20 +57,15 @@ const allWagesFor = (employee)=>{
     const eligibleDates = employee.timeInEvents.map((e)=>e.date)
 
     const payable = eligibleDates.reduce((memo, d)=>
-        memo + wagesEarnedOnDate(employee, d)
-    }, 0) 
+        memo + wagesEarnedOnDate(employee, d), 0) 
 
     return payable
 }
 
-let findEmployeeByFirstName = function(srcArray, firstName) {
-  return srcArray.find(function(rec){
-    return rec.firstName === firstName
-  })
-}
+const findEmployeeByFirstName = (srcArray, firstName)=> 
+   srcArray.find((rec)=>rec.firstName === firstName);
 
-let calculatePayroll = function(arrayOfEmployeeRecords){
-    return arrayOfEmployeeRecords.reduce(function(memo, rec){
-        return memo + allWagesFor(rec)
-    }, 0)
-}
+
+const calculatePayroll = (arrayOfEmployeeRecords)=>
+     arrayOfEmployeeRecords.reduce((memo, rec)=>
+         memo + allWagesFor(rec), 0)
