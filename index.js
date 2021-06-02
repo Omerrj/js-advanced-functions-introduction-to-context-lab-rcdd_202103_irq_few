@@ -10,11 +10,11 @@ const createEmployeeRecord = (row)=>
     })
 
 
-let createEmployeeRecords = function(employeeRowData) {
-    return employeeRowData.map(function(row){
-        return createEmployeeRecord(row)
-    })
-}
+const createEmployeeRecords =(employeeRowData)=> 
+     employeeRowData.map((row)=>
+         createEmployeeRecord(row)
+    )
+
 
 let createTimeInEvent = function(employee, dateStamp){
     let [date, hour] = dateStamp.split(' ')
