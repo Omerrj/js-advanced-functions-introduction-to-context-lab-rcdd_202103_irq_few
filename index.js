@@ -47,18 +47,16 @@ const hoursWorkedOnDate = (employee, soughtDate)=>{
     return (outEvent.hour - inEvent.hour) / 100
 }
 
-let wagesEarnedOnDate = function(employee, dateSought){
-    let rawWage = hoursWorkedOnDate(employee, dateSought)
+const wagesEarnedOnDate =(employee, dateSought)=>{
+    const rawWage = hoursWorkedOnDate(employee, dateSought)
         * employee.payPerHour
     return parseFloat(rawWage.toString())
 }
 
-let allWagesFor = function(employee){
-    let eligibleDates = employee.timeInEvents.map(function(e){
-        return e.date
-    })
+const allWagesFor = (employee)=>{
+    const eligibleDates = employee.timeInEvents.map((e)=>e.date)
 
-    let payable = eligibleDates.reduce(function(memo, d){
+    const payable = eligibleDates.reduce((memo, d)=>
         return memo + wagesEarnedOnDate(employee, d)
     }, 0)
 
