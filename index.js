@@ -16,7 +16,7 @@ const createEmployeeRecords =(employeeRowData)=>
 
 
 const createTimeInEvent = (employee, dateStamp)=>{
-    let [date, hour] = dateStamp.split(' ')
+    const [date, hour] = dateStamp.split(' ')
 
     employee.timeInEvents.push({
         type: "TimeIn",
@@ -27,8 +27,8 @@ const createTimeInEvent = (employee, dateStamp)=>{
     return employee
 }
 
-let createTimeOutEvent = function(employee, dateStamp){
-    let [date, hour] = dateStamp.split(' ')
+const createTimeOutEvent = (employee, dateStamp)=>{
+    const [date, hour] = dateStamp.split(' ')
 
     employee.timeOutEvents.push({
         type: "TimeOut",
@@ -39,8 +39,8 @@ let createTimeOutEvent = function(employee, dateStamp){
     return employee
 }
 
-let hoursWorkedOnDate = function(employee, soughtDate){
-    let inEvent = employee.timeInEvents.find(function(e){
+const hoursWorkedOnDate = (employee, soughtDate)=>{
+    const inEvent = employee.timeInEvents.find(function(e){
         return e.date === soughtDate
     })
 
